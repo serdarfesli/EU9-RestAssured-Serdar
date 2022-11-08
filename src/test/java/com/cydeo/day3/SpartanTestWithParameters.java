@@ -55,4 +55,30 @@ public class SpartanTestWithParameters {
       assertTrue(response.body().asString().contains("Not Found"));
       response.prettyPrint();
    }
+   /*
+        Given accept type is Json
+        And query parameter values are:
+        gender|Female
+        nameContains|e
+        When user sends GET request to /api/spartans/search
+        Then response status code should be 200
+        And response content-type: application/json
+        And "Female" should be in response payload
+        And "Janette" should be in response payload
+     */
+   @Test
+   public void test3(){
+      Response response = given().accept(ContentType.JSON).and()
+              .queryParams("gender", "Female").and()
+              .queryParams("nameContains", "e")
+              .when().get("/api/spartans/search");
+      assertEquals(200,response.statusCode());
+      System.out.println("response.statusCode() = " + response.statusCode());
+      assertEquals("application/json",response.contentType());
+      System.out.println("response.contentType() = " + response.contentType());
+      assertTrue(response.body().asString().contains("Female"));
+      assertTrue(response.body().asString().contains("Janette"));
+      response.prettyPrint();
+
+   }
 }
