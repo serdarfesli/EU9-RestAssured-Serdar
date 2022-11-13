@@ -3,14 +3,14 @@ package com.cydeo.day2;
 
 
 import static io.restassured.RestAssured.*;
-
+import static org.junit.jupiter.api.Assertions.*;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 public class SpartanNegativeTest {
    @BeforeAll
    public static void init(){

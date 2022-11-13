@@ -2,6 +2,7 @@ package com.cydeo.day2;
 
 import static io.restassured.RestAssured.*;
 
+import com.cydeo.utilities.HRTestBase;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -10,11 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-public class HrGetRequest {
-@BeforeAll
-   public static void init(){
-   baseURI = "http://44.208.34.43:1000/ords/hr";
-}
+public class HrGetRequest extends HRTestBase {
+
 
 @Test
    public void test1(){
