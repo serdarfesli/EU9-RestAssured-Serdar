@@ -26,6 +26,7 @@ public class ORDSApiTestWithPath extends HRTestBase {
       List<Integer> regionID = response.path("items.region_id");
       for (Integer each : regionID) {
          Assertions.assertTrue(each==2);
+
       }
 
    }
