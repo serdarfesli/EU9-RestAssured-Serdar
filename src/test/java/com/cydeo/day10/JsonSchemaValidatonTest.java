@@ -19,5 +19,6 @@ public class JsonSchemaValidatonTest extends SpartanAuthTestBase {
            .when().get("/api/spartans/{id}")
            .then()
            .statusCode(200).body(JsonSchemaValidator.matchesJsonSchemaInClasspath("SingleSpartanSchema.json"));
+
    }
 }
